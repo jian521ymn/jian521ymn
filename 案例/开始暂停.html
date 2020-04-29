@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<meta name=keywords content=关键词>
+<meta name=description content=描述的文字>
+<title>D网页标题</title>
+<style>
+    #div1{
+        height: 20px;
+        width: 100px;
+        border: 1px red solid;
+    }
+</style>
+</head>
+<body>
+    <div id="div1"></div>
+    <button id="bu">开始</button>
+    <script>
+        var div1=document.getElementById("div1");
+        var bu=document.getElementById("bu");
+        var time=null;
+        function aa(){
+            var bb='0123456789'
+            var dd=''
+            for(var i=0;i<4;i++){
+                var cc=Math.round(Math.random()*9);
+                dd+=cc;
+            }
+            div1.innerHTML=dd;
+        }
+        aa();
+        bu.onclick=function(){
+            if(bu.innerHTML==="暂停"){
+            bu.innerHTML="开始"
+            clearInterval(time);
+                // tem=null;
+        }else{ bu.innerHTML="暂停"
+           time=setInterval(function(){
+            aa()
+        },200);}
+            
+        }
+        
+
+    </script>
+</body>
+</html>
